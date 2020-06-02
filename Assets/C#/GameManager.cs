@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("結束畫面")]
     public CanvasGroup final;
 
+    
+
 
 
     ///<summary>
@@ -130,7 +132,8 @@ public class GameManager : MonoBehaviour
             final.interactable = true;
             final.blocksRaycasts = true;
             textTitle.text = "挑戰失敗!!!"; //更新結束畫面標題
-            FindObjectOfType<Player>().enabled = false;   //取得玩家.啟動=false //死掉後讓背景人物禁止動作
+            //FindObjectOfType<Player>().enabled = false;   //取得玩家.啟動=false //死掉後讓背景人物禁止動作
+            Time.timeScale = 0f;//死掉後讓背景人物禁止動作 使用時禁止的方式
         }
     }
 
@@ -157,11 +160,15 @@ public class GameManager : MonoBehaviour
     #region 事件
     private void Start()
     {
-        countTotal = CreateProp(porps[0], 12);//道具總數 = 生成道具(道具一號，指定數量)
+        countTotal = CreateProp(porps[0], 8);//道具總數 = 生成道具(道具一號，指定數量)
 
         textCount.text = "道具數量: 0 /" + countTotal;
 
-        CreateProp(porps[1], 8);//生成道具(道具二號，指定數量)
+        CreateProp(porps[1], 4);//生成道具(道具二號，指定數量)
+
+        Time.timeScale = 1f;//人在背後會動
+       
+
     }
     private void Update()
     {

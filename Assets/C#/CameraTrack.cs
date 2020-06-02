@@ -24,8 +24,8 @@ public class CameraTrack : MonoBehaviour
         //攝影機與小明 Y 軸距離 0.8 - 0 = 0.8
         //攝影機與小明 Z 軸距離 -2 - 0 = -2
         Vector3 posTrack = player.position;
-        posTrack.y += 0.8f;
-        posTrack.z += -2f;
+        posTrack.y += 12f;
+        posTrack.z += -12f;
 
         //攝影機座標 =變形.座標
         Vector3 posCam = transform.position;
